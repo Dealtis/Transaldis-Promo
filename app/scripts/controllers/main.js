@@ -9,8 +9,6 @@
  */
 angular.module('transaldisSitePromoApp')
   .controller('MainCtrl', function($scope, $mdDialog, $mdMedia, $mdToast) {
-
-
     $scope.sign = function() {
       console.log("hemol");
       var parentEl = angular.element(document.body);
@@ -22,8 +20,8 @@ angular.module('transaldisSitePromoApp')
           signup: $scope.sign
         }
      });
-
     };
+    
     $scope.openFromLeft = function(ev) {
       var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
       $mdDialog.show({
