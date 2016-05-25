@@ -1,0 +1,50 @@
+<form name="dialogform" id="dialogForm" class="" ng-submit="dialogform.$valid && submit(user)">
+  <div class="row">
+    <div class="col-lg-6">
+      <md-input-container>
+        <label>Prénom</label>
+        <input ng-model="user.firstname" required type="text">
+      </md-input-container>
+    </div>
+    <div class="col-lg-6">
+      <md-input-container>
+        <label>Nom</label>
+        <input ng-model="user.lastname" required type="text">
+      </md-input-container>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <md-input-container>
+        <label>Société</label>
+        <input ng-model="user.societe" required type="text">
+      </md-input-container>
+    </div>
+    <div class="col-lg-6">
+      <md-input-container>
+        <label>Email</label>
+        <input ng-model="user.mail" required type="email">
+      </md-input-container>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <md-input-container>
+        <label>Code Postal</label>
+        <input ng-model="user.codepostal" required type="text">
+      </md-input-container>
+    </div>
+    <div class="col-lg-6">
+      <md-input-container>
+        <label>Ville</label>
+        <input ng-model="user.ville" required type="text">
+      </md-input-container>
+    </div>
+  </div>
+  <md-input-container>
+    <label>Adresse</label>
+    <input ng-model="user.addresse" required type="text">
+  </md-input-container>
+  <div vc-recaptcha key="'6Lc5PyATAAAAAH9SKAfVJ5HkF-SO49QuW3OWZCHI'" class="recaptcha" required></div>
+  <md-button class="submitbutton md-raised" type="submit">Envoyer</md-button>
+</form>

@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngMaterial',
+    'vcRecaptcha'
   ])
   .config(function ($routeProvider) {
     $routeProvider

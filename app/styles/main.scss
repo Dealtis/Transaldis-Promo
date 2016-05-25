@@ -1,89 +1,128 @@
 // bower:scss
 // endbower
-
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+@keyframes bounceIn {
+  20%,
+  40%,
+  60%,
+  80%,
+  from,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+  0% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  40% {
+    transform: scale3d(.9, .9, .9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+  80% {
+    transform: scale3d(.97, .97, .97);
+  }
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
 }
-
 body {
   padding: 0;
 }
-
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
+.main-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* hide horizontal scrollbar on IE11 */
+  overflow: hidden;
+  //background-color: #535353;
+  background-image: url('/images/backgr.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: table;
+  .main-wrapper-content {
+    display: table-cell;
+    vertical-align: middle;
+    .form-wrapper {
+      color: white;
+    }
+    p {
+      font-family: 'Lato';
+      font-weight: 400;
+      font-size: 1.2em;
+    }
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 4em;
+    }
   }
 }
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+#dialogForm,
+.thanks {
+  padding: 50px;
 }
-
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
+.thanks {
+  p {
+    font-family: 'Lato';
+    font-weight: 400;
+    font-size: 1.2em;
   }
 }
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
-  }
+.recaptcha {
+  margin-left: auto;
+  margin-right: auto;
 }
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
+.submitbutton {
+  margin-top: 20px;
+}
+.md-button.md-raised {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  background-color: #94BA65;
+  color: white;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+.md-button.md-raised:not([disabled]):hover {
+  background-color: #ACD976;
+}
+.md-button.md-fab:not([disabled]):hover {
+  background-color: #ACD976;
+}
+.md-button.md-fab {
+  background-color: #94BA65;
+}
+md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+  border-color: #ACD976;
+}
+.rs {
+  margin-top: 50px;
+}
+.animate-show {
+  opacity: 1;
+}
+.animate-show.ng-hide-add,
+.animate-show.ng-hide-remove {
+  transition: all linear 0.5s;
+}
+.animate-show.ng-hide {
+  animation-name: bounceIn;
+  animation-duration: 1s;
+  animation-fill-mode: ease;
+}
+@media (max-width:750px) {
+  .main-wrapper {
+    .main-wrapper-content {
+      h1 {
+        font-size: 2.5em;
+      }
+    }
   }
 }
