@@ -8,8 +8,7 @@
  * Controller of the transaldisSitePromoApp
  */
 angular.module('transaldisSitePromoApp')
-  .controller('DialogCtrl', function($scope, $mdDialog, bddmysql, signup) {;
-
+  .controller('DialogCtrl', function($scope, $mdDialog, bddmysql, signup) {
     $scope.hide = function() {
       $mdDialog.hide();
     };
@@ -20,12 +19,9 @@ angular.module('transaldisSitePromoApp')
       console.log(user);
       //push en bdd
       bddmysql.insertClient(user)
-        .success(function(result) {
+        .success(function() {
           $mdDialog.hide();
-          signup();          
+          signup();
         });
-
     };
-
-
   });

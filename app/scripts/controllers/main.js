@@ -1,5 +1,11 @@
 'use strict';
 
+var LoadingScreen = window.pleaseWait({
+  logo: 'images/logo_transaldis.png',
+  backgroundColor: '#ACD976',
+  loadingHtml: '<div class="spinner"><div class ="double-bounce1" ></div><div class="double-bounce2"></div></div>'
+});
+
 /**
  * @ngdoc function
  * @name transaldisSitePromoApp.controller:MainCtrl
@@ -8,25 +14,26 @@
  * Controller of the transaldisSitePromoApp
  */
 angular.module('transaldisSitePromoApp')
-  .controller('MainCtrl', function($scope, $mdDialog, $mdMedia, $mdToast) {
+  .controller('MainCtrl', function($scope, $mdDialog, $mdMedia) {
     $scope.sign = function() {
-      console.log("hemol");
+      var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'));
       var parentEl = angular.element(document.body);
       $mdDialog.show({
         parent: parentEl,
-        templateUrl :"views/dialogmerci.html",
-        controller: "DialogCtrl",
+        templateUrl: 'views/dialogmerci.html',
+        controller: 'DialogCtrl',
+        fullscreen: useFullScreen,
         locals: {
           signup: $scope.sign
         }
-     });
+      });
     };
-    
+
     $scope.openFromLeft = function(ev) {
-      var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
+      var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'));
       $mdDialog.show({
-        controller: "DialogCtrl",
-        templateUrl: "views/dialog.html",
+        controller: 'DialogCtrl',
+        templateUrl: 'views/dialog.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose: true,
@@ -36,4 +43,9 @@ angular.module('transaldisSitePromoApp')
         }
       });
     };
+
+    angular.element(document).ready(function() {
+      LoadingScreen.finish();
+      angular.element('.main-wrapper-content').addClass('animate');
+    });
   });
