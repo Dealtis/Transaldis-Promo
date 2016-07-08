@@ -1,57 +1,43 @@
 <div  layout="column">
   <form name="dialogform" id="dialogForm" class="" ng-submit="dialogform.$valid && submit(user)">
     <div layout="row" layout-padding>
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <md-input-container class="md-block">
+        <md-input-container flex class="md-block">
           <label>Prénom</label>
           <input ng-model="user.firstname" required type="text">
         </md-input-container>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <md-input-container class="md-block">
+        <md-input-container flex class="md-block">
           <label>Nom</label>
           <input ng-model="user.lastname" required type="text">
         </md-input-container>
-      </div>
     </div>
     <div layout="row" layout-padding>
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <md-input-container class="md-block">
+        <md-input-container flex class="md-block">
           <label>Société</label>
           <input ng-model="user.societe" required type="text">
         </md-input-container>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <md-input-container class="md-block">
+        <md-input-container flex class="md-block">
           <label>Email</label>
           <input ng-model="user.mail" required type="email">
         </md-input-container>
-      </div>
     </div>
     <div layout="row" layout-padding>
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <md-input-container class="md-block">
+        <md-input-container flex class="md-block">
           <label>Code Postal</label>
           <input ng-model="user.codepostal" required type="text">
         </md-input-container>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <md-input-container class="md-block">
+        <md-input-container flex class="md-block">
           <label>Ville</label>
           <input ng-model="user.ville" required type="text">
         </md-input-container>
-      </div>
     </div>
     <div layout="row" layout-padding >
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <md-input-container class="md-block">
+        <md-input-container flex class="md-block">
           <label>Adresse</label>
-          <input ng-model="user.addresse" required type="text">
+          <input ng-model="user.adresse" required type="text">
         </md-input-container>
-      </div>
     </div>
-    <div layout="row" layout-align="center center">      
-      <div vc-recaptcha size="compact" key="'6Lc5PyATAAAAAH9SKAfVJ5HkF-SO49QuW3OWZCHI'" class="recaptcha" required></div>
+    <div layout="row" layout-align="center center">
+      <div vc-recaptcha size="" key="'6Lc5PyATAAAAAH9SKAfVJ5HkF-SO49QuW3OWZCHI'" class="recaptcha" required></div>
     </div>
     <div layout="row" flex layout-align="center center">
       <md-button class="submitbutton md-raised" type="submit">Valider</md-button>

@@ -1745,10 +1745,10 @@ class PHP_CRUD_API {
 // uncomment the lines below when running in stand-alone mode:
 $api = new PHP_CRUD_API(array(
 	'dbengine'=>'MySQL',
-	'hostname'=>'localhost',
+	'hostname'=>'172.16.1.21',
 	'username'=>'root',
-	'password'=>'azerty0612',
-	'database'=>'transaldis_db',
+	'password'=>'Linuxr00tn',
+	'database'=>'SITE_TRANSALDIS',
 	'charset'=>'utf8'
 ));
 $api->executeCommand();
